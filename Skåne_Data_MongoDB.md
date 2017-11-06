@@ -14,11 +14,11 @@ So why this area? First, I'm interested to know how it looks like around Skåne.
 After exploring a sample size of the Skåne area via audit.py, I noticed the following main problems with the data, discussed as follows:
 
 * Incorrect extract area: extracted some regional data from Denmark, taking the following as an example:     
-  ```
+  ```html
    <tag k="addr:country" v="DK" />            
   ```   
 * Duplicated information: the same information was pulled from OSAK Danish database, e.g. 'osak:house_no' and 'addr:housenumber', 'osak:street_name' and 'addr:street'.
-   ```
+   ```html
   <tag k="addr:street" v="Give Alle" />
   <tag k="osak:house_no" v="12" />
 
@@ -27,7 +27,7 @@ After exploring a sample size of the Skåne area via audit.py, I noticed the fol
   ```
 * Problematic characters: 17 problematic tags in the bigger sample data and 2 problematic tags in the smaller sample data
 * Incomplete data: Some areas missing data, like postcode, country, etc.
-  ```
+  ```html
   <tag k="addr:city" v="Helsingborg" />
   <tag k="addr:street" v="Tågagatan" />
   <tag k="addr:country" v="SE" />
@@ -35,14 +35,14 @@ After exploring a sample size of the Skåne area via audit.py, I noticed the fol
   <tag k="source:address" v="Helsingborgs kommun" />
   <tag k="addr:housenumber" v="18C" />
   ```
-  ```
+  ```html
   <tag k="addr:city" v="Lund" />
   <tag k="addr:street" v="Hospitalsgatan" />
   <tag k="addr:country" v="SE" />
   <tag k="addr:housenumber" v="3" /> 
   ```
 * Inconsistent postal code format:
-  ```
+  ```html
   <tag k="addr:postcode" v="26253" />
   <tag k="addr:postcode" v="262 63" />
   <tag k="addr:postcode" v="262 80" />
