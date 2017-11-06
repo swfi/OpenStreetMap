@@ -4,4 +4,4 @@ First, choose any area of the world in [OpenStreeMap](https://www.openstreetmap.
   
 Second, clean the OpenStreetMap data for that part of the world.
   
-Finally, use MongoDB to store, query and aggregate the data.
+Lastly, use MongoDB to store, query and aggregate the data.
