@@ -7,7 +7,7 @@ Skåne, Sweden
 
 So why this area? First, I'm interested to know how it looks like around Skåne. Second, this regoin seems unpopular, which could most probably generate uncompleted data. Therefore, it would be worth the effort to get started to work on the data somehow.
 
-After data exploring, the results revealed the following facts:
+After investigating the sample data, I found the following problems in the dataset:
 1. The street names from the sample data didn't use any abbreviations normally used in USA.
 2. The format of postal codes was inconsistent.
 3. The extracted data included the region outside Skåne.
