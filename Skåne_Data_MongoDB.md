@@ -13,8 +13,7 @@ So why this area? First, I'm interested to know how it looks like around Skåne.
 
 After exploring a sample size of the Skåne area via audit.py, I noticed the following main problems with the data, discussed as follows:
 
-* Incorrect extract area: extracted some regional data from Denmark, taking the following as an example:
-   
+* Incorrect extract area: extracted some regional data from Denmark, taking the following as an example:     
    ```
    <tag k="addr:country" v="DK" />  
    ```
