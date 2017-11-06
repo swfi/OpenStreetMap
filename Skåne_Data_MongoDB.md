@@ -42,7 +42,7 @@ After exploring a sample size of the Skåne area via audit.py, I noticed the fol
   <tag k="addr:postcode" v="262 80" />
   <tag k="addr:postcode" v="23691" />
   
-### General information for extracted data
+#### General information for extracted data
 Before turning the data into JSON, I excluded all the problemtic strings, the duplicated information and turned all the existed Swedish postal codes into a standard format, for instance, "26253" becomes "262 53", etc. Once the data was imported to MongoDB, some basic querying revealed that this metro extract included the areas outside Skåne and there were some missing data in postcode, country, etc.
 
 ```DB
@@ -56,24 +56,41 @@ for co in countries:
 * {u'count': 5830732, u'_id': None}
 
 ```MongoDB
-
 # Check if there are missing data in cities for Region Skåne
 cities=db.nodes.aggregate([{"$match":{"$and":[{"address.country":{"$eq":'SE'}}, {"address.city":{"$eq": None}}]}}, {"$group":{"_id":"$address.city", "count":{"$sum":1}}}])
 for cit in cities:
-    print cit
-    
+    print cit    
 ```
 * {u'count': 8765, u'_id': None}
 
 ```MongoDB
-
 # Check if there are missing data in postcodes for Region Skåne
 posts=db.nodes.aggregate([{"$match":{"$and":[{"address.country":{"$eq":'SE'}}, {"address.postcode":{"$eq": None}}]}}, {"$group":{"_id":"$address.postcode", "count":{"$sum":1}}}])
 for po in posts:
-    print po
-    
+    print po    
 ```
 * {u'count': 82633, u'_id': None}
 
 These outputs confirmed the inclusion of surrounding cities in Denmark and missing/incompleted data in country, city and postal code for Region Skåne.
+
+#### Postal codes
+
+```MongoDB
+# Sort postcodes by count, descending 
+post=db.nodes.aggregate([{"$group":
+{"_id":"$address.postcode", "count":{"$sum":1}}}, {"$sort":{"count": -1}}, {"$limit":3}])
+for pid in post:
+    print pid
+```
+* {u'count': 6181982, u'_id': None}
+* {u'count': 1004, u'_id': u'241 35'}
+* {u'count': 764, u'_id': u'212 31'}
+
+When grouped together with this query, a huge amount of unwanted or missing postal codes surfaced besides confirming the standardization of all the inconsistent Swedish postal codes.
+
+### Data Overview
+This section contains basic statistics about the Skåne OpenStreetMap dataset and the MongoDB queries used to gather them.
+File size
+* SkåneMap.osm --------- 1.31G
+* SkåneMap.osm.json --------- 1.39G
 
