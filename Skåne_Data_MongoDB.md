@@ -14,7 +14,8 @@ So why this area? First, I'm interested to know how it looks like around Skåne.
 After exploring a sample size of the Skåne area via audit.py, I noticed the following main problems with the data, discussed as follows:
 
 * Incorrect extract area: extracted some regional data from Denmark, taking the following as an example:
-   ```
+   
+   ```
    <tag k="addr:country" v="DK" />  
    ```
 * Duplicated information: the same information was pulled from OSAK Danish database, e.g. 'osak:house_no' and 'addr:housenumber', 'osak:street_name' and 'addr:street'.
@@ -57,9 +58,9 @@ countries=db.nodes.aggregate([{"$group":{"_id":"$address.country", "count":{"$su
 for co in countries:
     print co
 ```
-* {u'count': 131098, u'_id': u'SE'}
-* {u'count': 269198, u'_id': u'DK'}
-* {u'count': 5830732, u'_id': None}
+{u'count': 131098, u'_id': u'SE'}  
+{u'count': 269198, u'_id': u'DK'}  
+{u'count': 5830732, u'_id': None}
 
 ```python
 # Check if there are missing data in cities for Region Skåne
@@ -88,9 +89,9 @@ post=db.nodes.aggregate([{"$group":
 for pid in post:
     print pid
 ```
-* {u'count': 6181982, u'_id': None}
-* {u'count': 1004, u'_id': u'241 35'}
-* {u'count': 764, u'_id': u'212 31'}
+{u'count': 6181982, u'_id': None}
+{u'count': 1004, u'_id': u'241 35'}  
+{u'count': 764, u'_id': u'212 31'}  
 
 When grouped together with this query, a huge amount of unwanted or missing postal codes surfaced besides confirming the standardization of all the inconsistent Swedish postal codes.
 
@@ -155,16 +156,16 @@ amenities=db.nodes.aggregate([{"$match":{"address.country":{"$eq":'SE'}, "amenit
 for ame in amenities:
     print ame
 ```
-* {u'count': 170, u'_id': u'restaurant'}
-* {u'count': 73, u'_id': u'place_of_worship'}
-* {u'count': 65, u'_id': u'fast_food'}
-* {u'count': 57, u'_id': u'cafe'}
-* {u'count': 54, u'_id': u'school'}
-* {u'count': 45, u'_id': u'kindergarten'}
-* {u'count': 45, u'_id': u'fuel'}
-* {u'count': 17, u'_id': u'bank'}
-* {u'count': 15, u'_id': u'pharmacy'}
-* {u'count': 15, u'_id': u'library'}
+ {u'count': 170, u'_id': u'restaurant'}  
+ {u'count': 73, u'_id': u'place_of_worship'}  
+ {u'count': 65, u'_id': u'fast_food'}  
+ {u'count': 57, u'_id': u'cafe'}  
+ {u'count': 54, u'_id': u'school'}  
+ {u'count': 45, u'_id': u'kindergarten'}  
+ {u'count': 45, u'_id': u'fuel'}  
+ {u'count': 17, u'_id': u'bank'}  
+ {u'count': 15, u'_id': u'pharmacy'}  
+ {u'count': 15, u'_id': u'library'}  
 
 ```python 
 # Top 5 popular cuisines for Region Skåne
@@ -173,11 +174,11 @@ cuisines=db.nodes.aggregate([{"$match":{"$or":[{"address.country":{"$eq":'SE'}},
 for cuis in cuisines:
     print cuis
 ```
-* {u'count': 30, u'_id': u'pizza'}
-* {u'count': 21, u'_id': u'regional'}
-* {u'count': 9, u'_id': u'thai'}
-* {u'count': 6, u'_id': u'italian'}
-* {u'count': 5, u'_id': u'indian'}
+ {u'count': 30, u'_id': u'pizza'}  
+ {u'count': 21, u'_id': u'regional'}  
+ {u'count': 9, u'_id': u'thai'}  
+ {u'count': 6, u'_id': u'italian'}  
+ {u'count': 5, u'_id': u'indian'}  
 
 ```python
 # Top 10 cities with the highest number and percentages of wheelchair access in Skåne 
@@ -294,12 +295,10 @@ Although the Skåne OpenStreetMap dataset is large yet uncompleted, the data has
 
 ### References
 
-[Aggregation - Ratio/Percentage of Total. Grokbase.](http://grokbase.com/t/gg/mongodb-user/1492v7dk19/aggregation-ratio-percentage-of-total)
-Aguinis, H., Joo, H. & Gottfredson, R. K. (2013). What monetary rewards can and cannot do: How to show employees the money. Business Horizons, 56, 241—249.
-[ALLCapture.](http://www.allcapture.com/eng/index.php)
-[Markdown-Cheatsheet. Github.](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-[Matplotlib Pie chart. Python Tutorials.](https://pythonspot.com/en/matplotlib-pie-chart/)
-[MongoDB Manual. MongoDB.](https://docs.mongodb.com/manual/)
-[Lantmateriet.](https://www.lantmateriet.se/en/About-Lantmateriet/About-us/Anvand-var-information/)
- 
-
+[Aggregation - Ratio/Percentage of Total. Grokbase.](http://grokbase.com/t/gg/mongodb-user/1492v7dk19/aggregation-ratio-percentage-of-total)  
+Aguinis, H., Joo, H. & Gottfredson, R. K. (2013). What monetary rewards can and cannot do: How to show employees the money. Business Horizons, 56, 241—249.  
+[ALLCapture.](http://www.allcapture.com/eng/index.php)  
+[Markdown-Cheatsheet. Github.](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)  
+[Matplotlib Pie chart. Python Tutorials.](https://pythonspot.com/en/matplotlib-pie-chart/)  
+[MongoDB Manual. MongoDB.](https://docs.mongodb.com/manual/)  
+[Lantmateriet.](https://www.lantmateriet.se/en/About-Lantmateriet/About-us/Anvand-var-information/)  
