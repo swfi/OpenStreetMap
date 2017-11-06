@@ -15,8 +15,8 @@ After exploring a sample size of the Skåne area via audit.py, I noticed the fol
 
 * Incorrect extract area: extracted some regional data from Denmark, taking the following as an example:     
   ```html
-   <tag k="addr:country" v="DK" />            
-  ```   
+   <tag k="addr:country" v="DK" />          
+  ```     
 * Duplicated information: the same information was pulled from OSAK Danish database, e.g. 'osak:house_no' and 'addr:housenumber', 'osak:street_name' and 'addr:street'.
    ```html
   <tag k="addr:street" v="Give Alle" />
