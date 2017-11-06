@@ -11,7 +11,7 @@ So why this area? First, I'm interested to know how it looks like around Skåne.
 
 ### Problems Encountered in the Selected Region
 
-After exploring a sample size of the Skåne area via audit.py, I noticed the following main problems with the data, discussed as follows:
+After exploring a sample size of the Skåne area via [audit.py](https://github.com/swfi/OpenStreetMap/blob/master/audit.py), I noticed the following main problems with the data, discussed as follows:
 
 * Incorrect extract area: extracted some regional data from Denmark, taking the following as an example:     
   ```html
