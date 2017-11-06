@@ -14,9 +14,11 @@ So why this area? First, I'm interested to know how it looks like around Skåne.
 After exploring a sample size of the Skåne area via audit.py, I noticed the following main problems with the data, discussed as follows:
 
 * Incorrect extract area: extracted some regional data from Denmark, taking the following as an example:     
-   ```
+  
+  ```
    <tag k="addr:country" v="DK" />  
-   ```
+  ```
+ 
 * Duplicated information: the same information was pulled from OSAK Danish database, e.g. 'osak:house_no' and 'addr:housenumber', 'osak:street_name' and 'addr:street'.
    ```
   <tag k="addr:street" v="Give Alle" />
@@ -286,7 +288,7 @@ for wp in wheel_percentages:
  ```
  ![Top5WheelchairAccess](https://github.com/swfi/OpenStreetMap/blob/master/PieChart_WheelchairAccess.jpg)
  
-Due to missing data in country, those cities that belong to Skåne were left out by the query. Therefore, this pie chart just displayed a rough overview of the wheelchair accessibility in Skåne. One way to improve this is to add data entry restrictions to the OpenStreetMap dataset. Once some missing data exists, data submission won't go through and a pop-up message will be displayed to explain what needs to be fixed. In this way, users would most likely submit completed data. Meanwhile, using the data from Lantmäteriet, the Swedish National Land Survey, could add more detailed and completed land information to the dataset.
+Due to missing data in variable 'country', those cities that belong to Skåne were left out by the query. Therefore, this pie chart just displayed a rough overview of the wheelchair accessibility in Skåne. One way to improve this is to add data entry restrictions to the OpenStreetMap dataset. Once some missing data exists, data submission won't go through and a pop-up message will be displayed to explain what needs to be fixed. In this way, users would most likely submit completed data. Meanwhile, using the data from Lantmäteriet, the Swedish National Land Survey, could add more detailed and completed land information to the dataset.
 
 ### Conclusion
 
