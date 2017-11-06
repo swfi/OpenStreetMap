@@ -57,9 +57,9 @@ countries=db.nodes.aggregate([{"$group":{"_id":"$address.country", "count":{"$su
 for co in countries:
     print co
 ```
-{u'count': 131098, u'_id': u'SE'}  
-{u'count': 269198, u'_id': u'DK'}  
-{u'count': 5830732, u'_id': None}
+{u'count': 131098, u'_id': u'SE'}    
+{u'count': 269198, u'_id': u'DK'}    
+{u'count': 5830732, u'_id': None}  
 
 ```python
 # Check if there are missing data in cities for Region Skåne
@@ -88,9 +88,9 @@ post=db.nodes.aggregate([{"$group":
 for pid in post:
     print pid
 ```
-{u'count': 6181982, u'_id': None}
-{u'count': 1004, u'_id': u'241 35'}  
-{u'count': 764, u'_id': u'212 31'}  
+{u'count': 6181982, u'_id': None}  
+{u'count': 1004, u'_id': u'241 35'}    
+{u'count': 764, u'_id': u'212 31'}    
 
 When grouped together with this query, a huge amount of unwanted or missing postal codes surfaced besides confirming the standardization of all the inconsistent Swedish postal codes.
 
