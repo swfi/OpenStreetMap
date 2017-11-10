@@ -7,4 +7,4 @@ This project aims to use data wrangling techniques. First, choose any area of th
 * Python
 * MongoDB
 
-*© Arianna E. 2017*  
+*©2017 Arianna E.*  
